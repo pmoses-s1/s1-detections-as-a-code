@@ -11,7 +11,7 @@ status = "Active"            # Draft never fires; flip to Active after review/DT
 expiration_mode = "Permanent"
 
 # Boolean S1QL. Escape any embedded double quotes.
-s1ql = 'EventType = "Process Creation" AND TgtProcName = "powershell.exe" AND (TgtProcCmdLine ContainsCIS "-enc" OR TgtProcCmdLine ContainsCIS "-EncodedCommand")'
+s1ql = 'EventType = "Process Creation" AND TgtProcName = "powershell.exe" AND (TgtProcCmdLine contains:anycase("-enc") OR TgtProcCmdLine contains:anycase("-EncodedCommand"))'
 
 treat_as_threat = "UNDEFINED"   # UNDEFINED | Suspicious | Malicious
 network_quarantine = false
