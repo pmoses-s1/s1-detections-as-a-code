@@ -70,7 +70,7 @@
         "account_ids": {"type": "array", "items": {"type": "string"}}
       }
     },
-    "metadata": {"type": "object", "description": "Repo bookkeeping only. Not sent to the API."}
+    "metadata": {"type": "object", "description": "Governance metadata kept in the repo. The custom-detection API has no native MITRE/tag/custom-attribute field, so the recognized keys mitre (technique IDs), mitre_tactics (tactic IDs), tags, and owner are folded into a compact [DaC] footer appended to the rule description (visible in the console). Other keys such as references stay repo-only.", "properties": {"mitre": {"type": "array", "items": {"type": "string"}}, "mitre_tactics": {"type": "array", "items": {"type": "string"}}, "tags": {"type": "array", "items": {"type": "string"}}, "owner": {"type": "string"}, "references": {"type": "array", "items": {"type": "string"}}}}
   },
   "allOf": [
     {"if": {"properties": {"query_type": {"const": "events"}}}, "then": {"required": ["s1ql"]}},

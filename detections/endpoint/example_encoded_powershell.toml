@@ -19,8 +19,13 @@ network_quarantine = false
 [scope]
 site = "pmoses demo"
 
-# Bookkeeping only. Not sent to the API; kept in-repo for review and reporting.
+# Governance source of truth. The API has no MITRE/tag/custom-attribute fields on
+# custom rules, so the sync engine folds mitre / mitre_tactics / tags / owner into
+# a compact "[DaC]" footer on the rule description (visible in the console). The
+# rest (references, etc.) stays repo-only for review, coverage, and reporting.
 [metadata]
-mitre = ["T1059.001"]
-author = "detection-engineering"
-references = ["https://attack.mitre.org/techniques/T1059/001/"]
+mitre = ["T1059.001", "T1204.002"]     # technique IDs, appended to the description
+mitre_tactics = ["TA0002", "TA0005"]   # tactic IDs
+tags = ["powershell", "execution", "defense-evasion"]
+owner = "detection-engineering"
+references = ["https://attack.mitre.org/techniques/T1059/001/"]  # repo-only
