@@ -7,7 +7,7 @@ name = "DaC Example - Encoded PowerShell Command Line"
 description = "Detects powershell.exe launched with an encoded command argument, a common defense-evasion and execution technique. MITRE T1059.001."
 query_type = "events"
 severity = "High"
-status = "Draft"            # Draft never fires; flip to Active after review/DTAP
+status = "Active"            # Draft never fires; flip to Active after review/DTAP
 expiration_mode = "Permanent"
 
 # Boolean S1QL. Escape any embedded double quotes.

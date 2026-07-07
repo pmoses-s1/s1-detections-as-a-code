@@ -6,7 +6,7 @@ name = "DaC Example - Brute Force Followed by Successful Logon (same user)"
 description = "Correlates a burst of failed logons followed by a successful logon for the same user within the window, a classic password-guessing success pattern. MITRE T1110."
 query_type = "correlation"
 severity = "High"
-status = "Draft"
+status = "Active"
 expiration_mode = "Permanent"
 
 # Optional mitigation on correlation rules:
